@@ -1,7 +1,9 @@
 {
-  "name": "pagefly-headless",
-  "version": "1.1.0",
-  "description": "",
+  "name": "@pagefly/test",
+  "version": "0.0.7",
+  "description": "Pagefly test module",
+  "author": "Phong Vu",
+  "license": "MIT",
   "source": "index.ts",
   "main": "dist/index.js",
   "module": "dist/module.js",
@@ -11,8 +13,6 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lish": "parcel build && publish"
   },
-  "author": "Xuan-An Cao",
-  "license": "ISC",
   "dependencies": {
     "contentful": "^9.2.4",
     "css-loader": "^6.7.1",
