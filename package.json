@@ -1,10 +1,10 @@
 {
   "name": "@pagefly/test",
-  "version": "0.0.22",
+  "version": "0.0.23",
   "description": "Pagefly test module",
   "author": "Phong Vu",
   "license": "MIT",
-  "source": "index.ts",
+  "source": "index.tsx",
   "main": "dist/index.js",
   "module": "dist/module.js",
   "scripts": {
