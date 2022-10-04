@@ -23,8 +23,28 @@ declare namespace Paragraph {
         dropcap: boolean;
     };
 }
+declare global {
+    interface Window {
+        pf_accordion_offset: any;
+    }
+}
 declare namespace Button {
     var defaultProps: {
+        clickAction?: string;
+        href: string;
+        linkTarget: string;
+        section: string;
+        mailTo: string;
+        phone: string;
+        popupContent: string;
+        popupWidth: string;
+        popupHeight: string;
+        popupAnimation: string;
+        youtubeData: any;
+        htmlVideoData: any;
+        vimeoData: any;
+        shopifyPageData: any;
+        popupImageData: any;
         value: string;
         btnStyle: string;
         iconPos: string;
@@ -38,6 +58,7 @@ declare namespace Icon {
         name: string;
     };
 }
+export const pageFlyLoader: (siteId: any, pageHandler: any) => Promise<any>;
 export const renderData: (type: string) => {
     _id: string;
     __v: number;
@@ -399,7 +420,6 @@ export const renderData: (type: string) => {
     publishedHtml: string;
     publishedAt: string;
 };
-
-export default function PageFlyPage({ accessToken, pageId, pageHandler }: any): JSX.Element;
+export default function PageFlyPage({ accessToken, pageData }: any): JSX.Element;
 
 //# sourceMappingURL=types.d.ts.map

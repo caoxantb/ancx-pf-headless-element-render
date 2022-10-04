@@ -60,7 +60,7 @@ export const FAKE_DATA_STOREFRONT = {
         {
             "id": "3",
             "type": "storefront",
-            "accessToken": "0de90dcb6dfc3e7dc0f5548cba884c39"
+            "accessToken": "0de90dcb6dfc3e7dc0f5548cba884c39",
         }
     ],
     "items": [

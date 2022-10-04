@@ -32,7 +32,7 @@ const Section = (props: any) => {
         data-parallax={bgType === 'parallax' || undefined}
         data-parallax-speed={bgType === 'parallax' && parallaxSpeed ? parallaxSpeed : undefined}
         style={{ ...overlayStyle }}
-        data-section-id={`pf-${_id.split('-')[0]}`}
+        data-section-id={`pf-${_id.split('-')[1]}`}
     >
         <Container style={containerStyle}>{children}</Container>
     </StyledSection>

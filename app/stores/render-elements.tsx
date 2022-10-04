@@ -7,6 +7,7 @@ import { base64IDfromHex } from "../utilities/hex-to-base64";
 import { getData } from "../api/";
 import { checkPropertyKey } from "../utilities/check-property-key";
 import {mainCss} from '../styles/main'
+import { getCssText } from "../utilities/get-css-text";
 
 interface IPageContext {
   elementStores?: Map<string, any>;
@@ -41,12 +42,18 @@ export const renderPage = (pageData: any) => {
   if (bodyStore) {
     items.forEach((item: any, idx: any) => {
       const { _id } = item;
-      elementStores.set(_id, { _id, ...item, count: idx + 1 });
+      elementStores.set(_id, { _id, styleId: idx + 1, ...item, count: idx + 1 });
     });
+    console.log(elementStores)
+    const cssString = getCssText(elementStores, pageData)
+    console.log(cssString)
     return (
       <>
         <style dangerouslySetInnerHTML={{
           __html: mainCss
+        }}></style>
+        <style dangerouslySetInnerHTML={{
+          __html: cssString
         }}></style>
         <PageContext.Provider
           value={{

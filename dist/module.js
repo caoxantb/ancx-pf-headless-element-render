@@ -1,8 +1,9 @@
-import {jsx as $hCgyA$jsx, jsxs as $hCgyA$jsxs, Fragment as $hCgyA$Fragment} from "react/jsx-runtime";
-import $hCgyA$react, {useContext as $hCgyA$useContext, memo as $hCgyA$memo, cloneElement as $hCgyA$cloneElement, useState as $hCgyA$useState, useEffect as $hCgyA$useEffect} from "react";
-import $hCgyA$styledcomponents from "styled-components";
-import {Buffer as $hCgyA$Buffer} from "buffer";
-import {createClient as $hCgyA$createClient} from "contentful";
+import $iJRBc$react, {useContext as $iJRBc$useContext, memo as $iJRBc$memo, cloneElement as $iJRBc$cloneElement, useEffect as $iJRBc$useEffect, useState as $iJRBc$useState} from "react";
+import {jsx as $iJRBc$jsx, jsxs as $iJRBc$jsxs, Fragment as $iJRBc$Fragment} from "react/jsx-runtime";
+import $iJRBc$styledcomponents from "styled-components";
+import {Buffer as $iJRBc$Buffer} from "buffer";
+import {createClient as $iJRBc$createClient} from "contentful";
+
 
 const $83ff32df0b45137b$export$24c10788497c064 = {
     "_id": "91feb786-f3cb-466d-89cb-8900f9e34186",
@@ -976,7 +977,7 @@ const $fc565b81ba575eda$export$276c71f37e27127d = {
 
 
 const $ce5afecbcc02bd67$var$Basic = ({ children: children  })=>{
-    return /*#__PURE__*/ (0, $hCgyA$jsx)("div", {
+    return /*#__PURE__*/ (0, $iJRBc$jsx)("div", {
         children: children
     });
 };
@@ -988,7 +989,7 @@ var $ce5afecbcc02bd67$export$2e2bcd8739ae039 = $ce5afecbcc02bd67$var$Basic;
 const $05305feb64259a28$var$Heading = (props)=>{
     const { store: { data: data  } , children: children  } = props;
     const { showIcon: showIcon  } = data || {};
-    return /*#__PURE__*/ (0, $hCgyA$jsx)("h3", {
+    return /*#__PURE__*/ (0, $iJRBc$jsx)("h3", {
         children: !showIcon ? children.filter((item, idx)=>idx !== 0) : children
     });
 };
@@ -1000,7 +1001,7 @@ var $05305feb64259a28$export$2e2bcd8739ae039 = $05305feb64259a28$var$Heading;
 const $ae7885602e49687e$var$Text = (props)=>{
     const { store: store  } = props;
     const { data: { value: value  }  } = store;
-    return /*#__PURE__*/ (0, $hCgyA$jsx)("span", {
+    return /*#__PURE__*/ (0, $iJRBc$jsx)("span", {
         children: value
     });
 };
@@ -1020,26 +1021,26 @@ const $c283ba1b2f151c2d$var$Section = (props)=>{
     const containerStyle = container ? {
         [`--cw`]: isNaN(containerWidth) ? containerWidth : containerWidth + "px"
     } : undefined;
-    return /*#__PURE__*/ (0, $hCgyA$jsx)($c283ba1b2f151c2d$var$StyledSection, {
+    return /*#__PURE__*/ (0, $iJRBc$jsx)($c283ba1b2f151c2d$var$StyledSection, {
         "data-parallax": bgType === "parallax" || undefined,
         "data-parallax-speed": bgType === "parallax" && parallaxSpeed ? parallaxSpeed : undefined,
         style: {
             ...overlayStyle
         },
-        "data-section-id": `pf-${_id.split("-")[0]}`,
-        children: /*#__PURE__*/ (0, $hCgyA$jsx)($c283ba1b2f151c2d$export$42a852a2b6b56249, {
+        "data-section-id": `pf-${_id.split("-")[1]}`,
+        children: /*#__PURE__*/ (0, $iJRBc$jsx)($c283ba1b2f151c2d$export$42a852a2b6b56249, {
             style: containerStyle,
             children: children
         })
     });
 };
-const $c283ba1b2f151c2d$var$StyledSection = (0, $hCgyA$styledcomponents).div`
+const $c283ba1b2f151c2d$var$StyledSection = (0, $iJRBc$styledcomponents).div`
   & {
     padding: 20px 0;
     position: relative;
   }
 `;
-const $c283ba1b2f151c2d$export$42a852a2b6b56249 = (0, $hCgyA$styledcomponents).div``;
+const $c283ba1b2f151c2d$export$42a852a2b6b56249 = (0, $iJRBc$styledcomponents).div``;
 var $c283ba1b2f151c2d$export$2e2bcd8739ae039 = $c283ba1b2f151c2d$var$Section;
 
 
@@ -1049,7 +1050,7 @@ var $c283ba1b2f151c2d$export$2e2bcd8739ae039 = $c283ba1b2f151c2d$var$Section;
 
 
 
-const $a07ab03f670637d5$var$NullElement = ()=>/*#__PURE__*/ (0, $hCgyA$jsx)("div", {});
+const $a07ab03f670637d5$var$NullElement = ()=>/*#__PURE__*/ (0, $iJRBc$jsx)("div", {});
 const $a07ab03f670637d5$export$643600c573d23dce = (comp = $a07ab03f670637d5$var$NullElement)=>{
     return function EnhancedComponent(props) {
         const realElement = comp(props);
@@ -1063,7 +1064,7 @@ const $a07ab03f670637d5$export$643600c573d23dce = (comp = $a07ab03f670637d5$var$
             // id: id || undefined,
             className: `pf-${count}_` + (className ? ` ${className}` : "") + hideOnClasses
         };
-        return realElement ? /*#__PURE__*/ (0, $hCgyA$cloneElement)(realElement, enhancedProps) : null;
+        return realElement ? /*#__PURE__*/ (0, $iJRBc$cloneElement)(realElement, enhancedProps) : null;
     };
 };
 
@@ -1074,7 +1075,7 @@ const $46c19984784c7801$var$fixSize = (s)=>{
 };
 const $46c19984784c7801$var$Column = (props)=>{
     const { children: children  } = props;
-    return /*#__PURE__*/ (0, $hCgyA$jsx)($46c19984784c7801$var$StyledCol, {
+    return /*#__PURE__*/ (0, $iJRBc$jsx)($46c19984784c7801$var$StyledCol, {
         children: children
     });
 };
@@ -1094,16 +1095,16 @@ const $46c19984784c7801$var$EnhancedColumn = (props)=>{
     md && (columnWidth["--c-md"] = md);
     lg && (columnWidth["--c-lg"] = lg);
     const hideOnClasses = (hideOnDesktop ? " pf-lg-hide" : "") + (hideOnLaptop ? " pf-md-hide" : "") + (hideOnTablet ? " pf-sm-hide" : "") + (hideOnMobile ? " pf-hide" : "");
-    return /*#__PURE__*/ (0, $hCgyA$jsx)("div", {
+    return /*#__PURE__*/ (0, $iJRBc$jsx)("div", {
         className: `pf-c${hideOnClasses}`,
         style: columnWidth,
-        children: /*#__PURE__*/ (0, $hCgyA$jsx)($46c19984784c7801$var$EnhancedColumns, {
+        children: /*#__PURE__*/ (0, $iJRBc$jsx)($46c19984784c7801$var$EnhancedColumns, {
             store: store,
             ...props
         })
     });
 };
-const $46c19984784c7801$var$StyledCol = (0, $hCgyA$styledcomponents).div`
+const $46c19984784c7801$var$StyledCol = (0, $iJRBc$styledcomponents).div`
   position: relative;
   &:empty {
     display: initial;
@@ -1167,7 +1168,7 @@ const $f5e18de6548e40b8$var$Row = (props)=>{
     const style = {
         ...(0, $0be9d5abccd9d11b$export$2c2156e8934ffa3a)((0, $41612856a6718933$export$38fb686e578cffec)(gutter), "s")
     };
-    return /*#__PURE__*/ (0, $hCgyA$jsx)($f5e18de6548e40b8$var$StyledRow, {
+    return /*#__PURE__*/ (0, $iJRBc$jsx)($f5e18de6548e40b8$var$StyledRow, {
         className: className,
         style: style,
         "data-pf-type": type,
@@ -1194,14 +1195,14 @@ $f5e18de6548e40b8$var$Row.defaultProps = {
         mobile: 1
     }
 };
-const $f5e18de6548e40b8$var$StyledRow = (0, $hCgyA$styledcomponents).div``;
+const $f5e18de6548e40b8$var$StyledRow = (0, $iJRBc$styledcomponents).div``;
 var $f5e18de6548e40b8$export$2e2bcd8739ae039 = $f5e18de6548e40b8$var$Row;
 
 
 
 
 
-const $88c083388e11d8aa$export$7722b1870d9eec03 = (0, $hCgyA$styledcomponents).div`
+const $88c083388e11d8aa$export$7722b1870d9eec03 = (0, $iJRBc$styledcomponents).div`
   display: inline-block;
   max-width: 100%;
   position: relative;
@@ -1236,7 +1237,7 @@ $aa37c15c2d8317a1$var$Image.defaultProps = {
 };
 function $aa37c15c2d8317a1$var$Image(props) {
     const { store: { mode: mode  } , store: store , title: title , naturalWidth: naturalWidth , naturalHeight: naturalHeight  } = props;
-    let imageRef = /*#__PURE__*/ (0, $hCgyA$react).createRef();
+    let imageRef = /*#__PURE__*/ (0, $iJRBc$react).createRef();
     const renderPicture = ()=>{
         const { title: title , alt: alt , src: src  } = store.data;
         const placeholderStyle = {
@@ -1246,7 +1247,7 @@ function $aa37c15c2d8317a1$var$Image(props) {
             borderRadius: "2px",
             maxHeight: "60vh"
         };
-        return /*#__PURE__*/ (0, $hCgyA$jsx)("img", {
+        return /*#__PURE__*/ (0, $iJRBc$jsx)("img", {
             ref: imageRef,
             src: src,
             width: naturalWidth,
@@ -1265,7 +1266,7 @@ function $aa37c15c2d8317a1$var$Image(props) {
     };
     const ImageWrapper = (0, $88c083388e11d8aa$export$7722b1870d9eec03);
     // if (mode === 'view' && clickAction && clickAction !== 'none') {
-    return /*#__PURE__*/ (0, $hCgyA$jsx)(ImageWrapper, {
+    return /*#__PURE__*/ (0, $iJRBc$jsx)(ImageWrapper, {
         title: title,
         children: renderPicture()
     });
@@ -1287,7 +1288,7 @@ function $a9142ec88ee278c6$var$Paragraph(props) {
         dropcap ? children[0] : null,
         children[1]
     ];
-    return /*#__PURE__*/ (0, $hCgyA$jsx)($a9142ec88ee278c6$var$StyledParagraph, {
+    return /*#__PURE__*/ (0, $iJRBc$jsx)($a9142ec88ee278c6$var$StyledParagraph, {
         dropcap: dropcap && children.length === 1 ? false : dropcap,
         className: dropcap && children.length === 1 ? false : dropcap ? `dropcap--${props.dropcapStyle || "none"}` : "",
         dropcapColor: props.dropcapColor,
@@ -1298,7 +1299,7 @@ function $a9142ec88ee278c6$var$Paragraph(props) {
     });
 }
 var $a9142ec88ee278c6$export$2e2bcd8739ae039 = $a9142ec88ee278c6$var$Paragraph;
-const $a9142ec88ee278c6$var$StyledParagraph = (0, $hCgyA$styledcomponents).p`
+const $a9142ec88ee278c6$var$StyledParagraph = (0, $iJRBc$styledcomponents).p`
   & > span:last-child {
     line-height: inherit;
     display: block;
@@ -1334,7 +1335,7 @@ const $a9142ec88ee278c6$var$StyledParagraph = (0, $hCgyA$styledcomponents).p`
 
 
 
-const $07a87d71635eef3e$export$2d5d2ba3c7c8c40b = (0, $hCgyA$styledcomponents).a`
+const $07a87d71635eef3e$export$2d5d2ba3c7c8c40b = (0, $iJRBc$styledcomponents).a`
   display: inline-block;
   line-height: 1;
   padding: 12px 20px;
@@ -1352,25 +1353,521 @@ const $07a87d71635eef3e$export$2d5d2ba3c7c8c40b = (0, $hCgyA$styledcomponents).a
 `;
 
 
+const $231c504b3c8f421e$export$a7cd553a5e0245f2 = (src)=>{
+    if (src) src.match(/(http:|https:|)\/\/(player.|www.)?(vimeo\.com|youtu(be\.com|\.be|be\.googleapis\.com))\/(video\/|embed\/|watch\?v=|v\/)?([A-Za-z0-9._%-]*)(&\S+)?/);
+    return RegExp.$6;
+};
+const $231c504b3c8f421e$export$7d218b4bcd9d150d = (props, notData = false)=>{
+    const { clickAction: clickAction , href: href , linkTarget: linkTarget , section: section , topOffset: topOffset , phone: phone , mailTo: mailTo , src: src , popupContent: popupContent , popupWidth: popupWidth , popupHeight: popupHeight , popupAnimation: popupAnimation , youtubeData: youtubeData , shopifyPageData: shopifyPageData , vimeoData: vimeoData , htmlVideoData: htmlVideoData , popupImageData: popupImageData ,  } = props.store.data;
+    let data = null;
+    switch(clickAction){
+        case "url":
+            data = href ? notData ? {
+                href: href,
+                target: linkTarget
+            } : {
+                "data-href": href,
+                "data-target": linkTarget
+            } : {};
+            break;
+        case "section":
+            data = section ? {
+                "data-to-section": section,
+                "data-offset": topOffset ? JSON.stringify(topOffset).replaceAll('"', "&quot;") : JSON.stringify({
+                    all: 50,
+                    laptop: 50,
+                    tablet: 50,
+                    mobile: 50
+                }).replaceAll('"', "&quot;"),
+                href: "#"
+            } : {};
+            break;
+        case "email":
+            data = mailTo ? notData ? {
+                href: mailTo
+            } : {
+                "data-href": mailTo
+            } : {};
+            break;
+        case "phone":
+            data = phone ? notData ? {
+                href: `tel:${phone}`
+            } : {
+                "data-href": `tel:${phone}`
+            } : {};
+            break;
+        case "lightbox":
+            data = notData ? {
+                href: src
+            } : {
+                "data-href": src
+            };
+            break;
+        case "popup":
+            data = {};
+            if (popupContent === "youtube") {
+                const { autoplay: autoplay , loop: loop , mute: mute , videoID: defaultVideoID , controls: controls , src: src1 , startTime: startTime , endTime: endTime ,  } = youtubeData;
+                const videoID = src1 && $231c504b3c8f421e$export$a7cd553a5e0245f2(src1) ? $231c504b3c8f421e$export$a7cd553a5e0245f2(src1) : defaultVideoID;
+                const start = startTime > 0 ? `?start=${startTime}` : "";
+                const end = endTime > 0 && startTime > 0 && startTime < endTime ? `&end=${endTime}` : "";
+                let params = `${start}${end}` + `${start ? "&" : "?"}` + `&autoplay=${autoplay ? 1 : 0}` + `&loop=${loop ? `1&playlist=${videoID}` : "0"}` + `&mute=${mute ? 1 : 0}` + `&controls=${controls ? 1 : 0}` + `&enablejsapi=1`;
+                const videoSrc = `https://www.youtube.com/embed/${videoID}${params}`;
+                data = {
+                    "data-popup-content": "youtube",
+                    "data-src": videoSrc
+                };
+            } else if (popupContent === "vimeo") {
+                const { autoplay: autoplay1 , loop: loop1 , mute: mute1 , portrait: portrait , byline: byline , title: title , controls: controls1 , src: src2  } = vimeoData;
+                const params1 = `&autoplay=${autoplay1}` + `&loop=${loop1}` + `&mute=${mute1}` + `&controls=${controls1}` + `&portrait=${portrait}` + `&byline=${byline}` + `&title=${title}`;
+                const videoId = src2 && $231c504b3c8f421e$export$a7cd553a5e0245f2(src2);
+                const videoID1 = videoId || "334691762";
+                const autoplaySetting = {};
+                autoplaySetting.allow = "autoplay";
+                const videoSrc1 = `https://player.vimeo.com/video/${videoID1}?api=1${params1}`;
+                data = {
+                    "data-popup-content": "vimeo",
+                    "data-src": videoSrc1
+                };
+            } else if (popupContent === "video") {
+                const { autoplay: autoplay2 , loop: loop2 , mute: mute2 , controls: controls2 , src: src3  } = htmlVideoData;
+                data = {
+                    "data-popup-content": "video",
+                    "data-src": src3 || "https://cdn.pagefly.io/static/video/placeholder.mp4",
+                    "data-autoplay": autoplay2,
+                    "data-loop": loop2,
+                    "data-controls": controls2,
+                    "data-muted": mute2
+                };
+            } else if (popupContent === "shopify") {
+                const { url: url  } = shopifyPageData;
+                const src4 = url || "";
+                data = {
+                    "data-popup-content": "shopify",
+                    "data-src": src4
+                };
+            } else if (popupContent === "image") {
+                const { src: src5 , title: title1 , alt: alt , objectFit: objectFit , objectPosition: objectPosition  } = popupImageData;
+                data = {
+                    "data-popup-content": "image",
+                    "data-src": src5,
+                    "data-image-popup-obj-fit": objectFit,
+                    "data-image-popup-obj-position": objectPosition
+                };
+                if (title1) data["data-image-popup-title"] = title1;
+                if (alt) data["data-image-popup-alt"] = alt;
+            }
+            data["data-action"] = "modal";
+            data["data-width"] = popupWidth;
+            data["data-height"] = popupHeight;
+            data["href"] = "#";
+            if (popupAnimation) data["data-popup-animation"] = popupAnimation;
+            break;
+        default:
+            data = {};
+    }
+    return {
+        ...data
+    };
+};
+
+
+const $88b2890704c1779c$export$75a78673f1dfd97e = {
+    // clickAction: 'none',
+    href: "",
+    linkTarget: "_self",
+    section: "",
+    mailTo: "",
+    phone: "",
+    popupContent: "youtube",
+    popupWidth: "854px",
+    popupHeight: "480px",
+    youtubeData: {
+        src: "",
+        loop: false,
+        autoplay: false,
+        controls: false,
+        mute: false,
+        videoID: "PtZir36SIMk"
+    },
+    htmlVideoData: {
+        src: "",
+        loop: false,
+        autoplay: false,
+        controls: false,
+        mute: false
+    },
+    vimeoData: {
+        src: "",
+        ratio: 56.25,
+        loop: false,
+        portrait: false,
+        byline: false,
+        title: false,
+        autoplay: false,
+        controls: true,
+        mute: false
+    },
+    shopifyPageData: {
+        url: "",
+        title: ""
+    },
+    popupImageData: {
+        src: "",
+        alt: "",
+        title: "",
+        objectFit: "contain",
+        objectPosition: "center center"
+    },
+    popupAnimation: ""
+};
+
+
+const $a87e1bcd00c1cabc$export$839f9b7dfe545fdc = `.pf-m{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:10000;max-width:100%;max-height:calc(9/16*100vw);-webkit-overflow-scrolling:touch;visibility:hidden}.pf-m iframe{border:0;background:#fff}.pf-m>img{max-width:90vw;max-height:90vh;vertical-align:middle}.pf-m:before{content:"";position:absolute;width:16px;height:16px;background:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMjI0LjUxMiAyMjQuNTEyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyMjQuNTEyIDIyNC41MTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgY2xhc3M9IiI+PGc+PGc+Cgk8cG9seWdvbiBzdHlsZT0iZmlsbDojRkZGRkZGIiBwb2ludHM9IjIyNC41MDcsNi45OTcgMjE3LjUyMSwwIDExMi4yNTYsMTA1LjI1OCA2Ljk5OCwwIDAuMDA1LDYuOTk3IDEwNS4yNjMsMTEyLjI1NCAgICAwLjAwNSwyMTcuNTEyIDYuOTk4LDIyNC41MTIgMTEyLjI1NiwxMTkuMjQgMjE3LjUyMSwyMjQuNTEyIDIyNC41MDcsMjE3LjUxMiAxMTkuMjQ5LDExMi4yNTQgICIgZGF0YS1vcmlnaW5hbD0iIzAxMDAwMiIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBkYXRhLW9sZF9jb2xvcj0iIzAxMDAwMiI+PC9wb2x5Z29uPgo8L2c+PC9nPiA8L3N2Zz4=) no-repeat center center/16px;right:0;top:-24px;pointer-events:none}.pf-o{position:fixed;opacity:0;visibility:hidden;display:block!important;transition:all .3s;pointer-events:none;left:0;top:0;width:100%;height:100%;z-index:9999;background:rgba(0,0,0,.9)}`;
+
+
+const $0497f961a7aee666$export$60523367a7e10402 = (data)=>{
+    if ([
+        "modal",
+        "lightbox",
+        "popup-video"
+    ].includes(data["data-action"])) {
+        const style = document.createElement("style");
+        const modal = document.createElement("div");
+        modal.classList.add("pf-m");
+        document.body.append(modal);
+        document.head.appendChild(style);
+        style.appendChild(document.createTextNode((0, $a87e1bcd00c1cabc$export$839f9b7dfe545fdc)));
+    }
+};
+
+
+function $349ee02077b9ab86$var$setAttributes(el, attrs) {
+    for(let key in attrs)el.setAttribute(key, attrs[key]);
+}
+function $349ee02077b9ab86$var$serializeArray(data) {
+    let arr = [];
+    for (let [key, value] of data)arr.push({
+        name: key,
+        value: value
+    });
+    return arr;
+}
+function $349ee02077b9ab86$var$pageflyPost(path, params, method = "post") {
+    const form = document.createElement("form");
+    form.method = method;
+    form.action = path;
+    params.forEach(function(field) {
+        const hiddenField = document.createElement("input");
+        hiddenField.type = "hidden";
+        hiddenField.name = field.name;
+        hiddenField.value = field.value;
+        form.appendChild(hiddenField);
+    });
+    document.body.appendChild(form);
+    form.submit();
+}
+function $349ee02077b9ab86$var$getOriginalSrc(src) {
+    if (!src.includes("https://cdn.shopify.com") || !src.includes("&resized")) return src;
+    let head = src.slice(0, src.lastIndexOf("_"));
+    let tail = src.split(".")[src.split(".").length - 1];
+    return `${head}.${tail}`;
+}
+async function $349ee02077b9ab86$var$getHttpRequest(url) {
+    return new Promise((resolve, reject)=>{
+        const req = new XMLHttpRequest();
+        req.open("GET", url, true);
+        req.onload = ()=>req.status === 200 ? resolve(req.response) : reject(Error(req.statusText));
+        req.onerror = (e)=>reject(Error(`Network Error: ${e}`));
+        req.send();
+    });
+}
+async function $349ee02077b9ab86$export$cf4674e613b1ea6a(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    const popupModal = document.querySelector(".pf-m");
+    const iframe = document.createElement("iframe");
+    $349ee02077b9ab86$var$setAttributes(iframe, {
+        width: "100%",
+        height: "100%",
+        "data-pagefly-popup": true,
+        allowfullscreen: "allowfullscreen"
+    });
+    const target = e.currentTarget;
+    const { src: src , width: width , height: height , popupAnimation: popupAnimation , popupContent: popupContent  } = target.dataset;
+    if (!src) return;
+    if (popupContent === "image") {
+        let { imagePopupObjFit: imagePopupObjFit , imagePopupAlt: imagePopupAlt , imagePopupTitle: imagePopupTitle , imagePopupObjPosition: imagePopupObjPosition  } = target.dataset;
+        const image = document.createElement("img");
+        let imageAttributes = {
+            src: $349ee02077b9ab86$var$getOriginalSrc(src),
+            style: `width: 100%; height: 100%; display: block; margin: auto; object-fit: ${imagePopupObjFit}; object-position: ${imagePopupObjPosition}`
+        };
+        if (imagePopupAlt) imageAttributes["alt"] = imagePopupAlt;
+        if (imagePopupTitle) imageAttributes["title"] = imagePopupTitle;
+        $349ee02077b9ab86$var$setAttributes(image, imageAttributes);
+        popupAnimation && (image.className = `pf-animated ${popupAnimation}`);
+        popupModal.append(image);
+    } else if (popupContent === "youtube" || popupContent === "vimeo") {
+        popupModal.append(iframe);
+        $349ee02077b9ab86$var$setAttributes(iframe, {
+            src: src
+        });
+    } else if (popupContent === "video") {
+        // Create and Add video to modal in click action
+        let { muted: muted , loop: loop , controls: controls , autoplay: autoplay , src: src1  } = target.dataset;
+        const video = document.createElement("video");
+        $349ee02077b9ab86$var$setAttributes(video, {
+            width: "100%",
+            height: "100%"
+        });
+        video.classList.add("pf-html5-video");
+        popupModal.append(video);
+        e.preventDefault();
+        e.stopPropagation();
+        autoplay = autoplay === "true";
+        controls = controls === "true";
+        loop = loop === "true";
+        muted = muted === "true";
+        popupModal.style.cssText = "visibility: visible; width: 650px; height: 450px;";
+        $349ee02077b9ab86$var$setAttributes(video, {
+            src: src1
+        });
+        controls && $349ee02077b9ab86$var$setAttributes(video, {
+            controls: ""
+        });
+        if (autoplay) video.play();
+        video.addEventListener("click", (e)=>{
+            e.preventDefault();
+            e.stopPropagation();
+            const target = e.currentTarget;
+            if (target.hasAttribute("controls") === false) {
+                if (video.paused) video.play();
+                else video.pause();
+            }
+        });
+        loop && $349ee02077b9ab86$var$setAttributes(video, {
+            loop: ""
+        });
+        video.muted = muted;
+    } else if (popupContent === "shopify") {
+        let useSrcDoc = false;
+        let eventAdded = false;
+        let html = await $349ee02077b9ab86$var$getHttpRequest(src);
+        const addIframeEvent = ()=>{
+            if (eventAdded && !useSrcDoc) return;
+            console.log("addIframeEvent", iframe.contentDocument);
+            eventAdded = true;
+            const iframeDoc = iframe.contentDocument;
+            // const iframeWin = iframe.contentWindow
+            const forms = iframeDoc.querySelectorAll("form");
+            forms.forEach((form)=>{
+                form.addEventListener("submit", function(e) {
+                    e.preventDefault();
+                    $349ee02077b9ab86$var$pageflyPost(form.getAttribute("action"), $349ee02077b9ab86$var$serializeArray(new FormData(form)));
+                });
+            });
+            const links = iframe.contentDocument.querySelectorAll("a");
+            links.forEach((link)=>{
+                link.addEventListener("click", function(e) {
+                    e.preventDefault();
+                    const target = e.currentTarget;
+                    console.log("redirect", target);
+                    const href = target.getAttribute("href");
+                    const t = target.getAttribute("target");
+                    if (href) {
+                        if (t === "_blank") window.open(href);
+                        else window.location.href = href;
+                    }
+                });
+            });
+        };
+        iframe.onload = (e)=>{
+            console.log("iframe load", e, iframe.contentDocument);
+            if (!iframe.contentDocument || !useSrcDoc) {
+                $349ee02077b9ab86$var$setAttributes(iframe, {
+                    srcdoc: html
+                });
+                useSrcDoc = true;
+                return;
+            }
+            addIframeEvent();
+        };
+        popupModal.append(iframe);
+        setTimeout(()=>{
+            console.log("iframe error", e, iframe.contentDocument);
+            if (!iframe.contentDocument) {
+                $349ee02077b9ab86$var$setAttributes(iframe, {
+                    srcdoc: html
+                });
+                useSrcDoc = true;
+            }
+        }, 1000);
+    }
+    popupModal.style.visibility = "visible";
+    popupModal.style.width = width;
+    popupModal.style.height = height;
+    popupAnimation && (iframe.className = `pf-animated ${popupAnimation}`);
+}
+
+
+function $d83ff411bac51950$export$d45ff16eba4afbf1(data) {
+    if ([
+        "modal",
+        "lightbox",
+        "popup-video"
+    ].includes(data["data-action"])) {
+        const overlay = document.createElement("div");
+        overlay.style.visibility = "hidden";
+        overlay.className = "pf-o";
+        document.body.appendChild(overlay);
+    }
+}
+function $d83ff411bac51950$export$89f8829913472d51(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    const body = document.body;
+    const overlay = document.querySelector(".pf-o");
+    body.style.overflow = "hidden";
+    body.style.height = "100%";
+    overlay.setAttribute("style", "opacity: 1; visibility: visible; pointer-events: initial");
+}
+function $d83ff411bac51950$export$e7f12c9836083937(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    const body = document.body;
+    const overlay = document.querySelector(".pf-o");
+    const modal = document.querySelector(".pf-m");
+    body.style.overflow = "";
+    body.style.height = "";
+    overlay.removeAttribute("style");
+    if (modal) {
+        modal.removeAttribute("style");
+        modal.innerHTML = "";
+    }
+}
+
+
+const $efcbdcb64a346cb4$var$DEVICES_MAP = {
+    laptop: {
+        from: 1025,
+        to: 1200
+    },
+    tablet: {
+        from: 768,
+        to: 1024
+    },
+    mobile: {
+        from: 0,
+        to: 767
+    }
+};
+const $efcbdcb64a346cb4$export$30c823bc834d6ab4 = ()=>{
+    const { innerWidth: innerWidth  } = window;
+    return Object.keys($efcbdcb64a346cb4$var$DEVICES_MAP).find((device)=>{
+        const { from: from , to: to  } = $efcbdcb64a346cb4$var$DEVICES_MAP[device];
+        return innerWidth >= from && innerWidth <= to;
+    }) || "all";
+};
+
+
+/*
+ * useful tips: https://1loc.dev/#easing-functions
+ * */ const $4681b49acfcb9cb9$var$easeOutCubic = (t)=>--t * t * t + 1;
+const $4681b49acfcb9cb9$export$5713088ca0a20ab6 = (yPosition, duration = 600)=>{
+    const startY = window.scrollY;
+    const difference = yPosition - startY;
+    const startTime = Date.now();
+    const step = ()=>{
+        const progress = (Date.now() - startTime) / duration;
+        const amount = $4681b49acfcb9cb9$var$easeOutCubic(progress);
+        window.scrollTo({
+            top: startY + amount * difference
+        });
+        if (progress < 1) window.requestAnimationFrame(step);
+    };
+    step();
+};
+
+
+async function $5017a478e83a9a2c$export$59c55351afefba5e(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    const device = (0, $efcbdcb64a346cb4$export$30c823bc834d6ab4)();
+    const target = e.currentTarget;
+    const topOffset = JSON.parse(target.getAttribute("data-offset").replaceAll("&quot;", '"'));
+    const customOffset = topOffset[device] ? parseInt(topOffset[device]) : 0;
+    const pfSectionId = target.getAttribute("data-to-section");
+    const otherOffset = window.pf_accordion_offset ? window.pf_accordion_offset : 0;
+    if (pfSectionId) {
+        // document.querySelector(`.${pfSectionId}`) will apply for old version
+        const section = document.querySelector(`[data-section-id=${pfSectionId}]`) || document.querySelector(`.${pfSectionId}`);
+        const sectionOffsetTop = section.getBoundingClientRect().top;
+        const offsetTopOfSection = sectionOffsetTop - document.body.getBoundingClientRect().top;
+        (0, $4681b49acfcb9cb9$export$5713088ca0a20ab6)(offsetTopOfSection - otherOffset - customOffset, 1000);
+    }
+}
+
+
 $e5520888ca8f2834$var$Button.defaultProps = {
     value: "Button",
     btnStyle: "plain",
     iconPos: "left",
     targetStyle: "",
-    name: "button"
+    name: "button",
+    ...(0, $88b2890704c1779c$export$75a78673f1dfd97e)
 };
+const $e5520888ca8f2834$var$buttonRef = /*#__PURE__*/ (0, $iJRBc$react).createRef();
 function $e5520888ca8f2834$var$Button(props) {
     const { children: children  } = props;
-    const { btnStyle: btnStyle , showIcon: showIcon , iconPos: iconPos , href: href  } = props.store.data;
+    const { btnStyle: btnStyle , showIcon: showIcon , iconPos: iconPos , href: href , clickAction: clickAction  } = props.store.data;
     const content = [
         showIcon ? children[0] : null,
         children[1] || null
     ];
     iconPos === "right" && content.reverse();
-    return /*#__PURE__*/ (0, $hCgyA$jsx)((0, $07a87d71635eef3e$export$2d5d2ba3c7c8c40b), {
+    const buttonData = {
+        ...(0, $231c504b3c8f421e$export$7d218b4bcd9d150d)(props, true)
+    };
+    async function asyncHandleOpenPopup(e) {
+        (0, $349ee02077b9ab86$export$cf4674e613b1ea6a)(e);
+    }
+    (0, $iJRBc$useEffect)(()=>{
+        if (clickAction === "popup") {
+            (0, $0497f961a7aee666$export$60523367a7e10402)(buttonData);
+            (0, $d83ff411bac51950$export$d45ff16eba4afbf1)(buttonData);
+        }
+    }, []);
+    (0, $iJRBc$useEffect)(()=>{
+        if ($e5520888ca8f2834$var$buttonRef.current) {
+            if (clickAction === "popup") {
+                $e5520888ca8f2834$var$buttonRef.current.addEventListener("click", async (e)=>{
+                    await asyncHandleOpenPopup(e);
+                    (0, $d83ff411bac51950$export$89f8829913472d51)(e);
+                });
+                const overlay = document.querySelector(".pf-o");
+                if (overlay) overlay.addEventListener("click", (0, $d83ff411bac51950$export$e7f12c9836083937));
+                return ()=>{
+                    $e5520888ca8f2834$var$buttonRef.current.removeEventListener("click", asyncHandleOpenPopup);
+                    $e5520888ca8f2834$var$buttonRef.current.removeEventListener("click", (0, $d83ff411bac51950$export$89f8829913472d51));
+                    overlay.removeEventListener("click", (0, $d83ff411bac51950$export$e7f12c9836083937));
+                };
+            } else if (clickAction === "section") {
+                $e5520888ca8f2834$var$buttonRef.current.addEventListener("click", async (e)=>{
+                    await (0, $5017a478e83a9a2c$export$59c55351afefba5e)(e);
+                });
+                return ()=>{
+                    $e5520888ca8f2834$var$buttonRef.current.removeEventListener("click", (0, $5017a478e83a9a2c$export$59c55351afefba5e));
+                };
+            }
+        }
+    }, [
+        $e5520888ca8f2834$var$buttonRef.current
+    ]);
+    return /*#__PURE__*/ (0, $iJRBc$jsx)((0, $07a87d71635eef3e$export$2d5d2ba3c7c8c40b), {
+        ref: $e5520888ca8f2834$var$buttonRef,
         iconPos: iconPos,
         btnStyle: btnStyle,
-        href: href,
+        ...(0, $231c504b3c8f421e$export$7d218b4bcd9d150d)(props, true),
         children: content
     });
 }
@@ -1382,7 +1879,7 @@ var $e5520888ca8f2834$export$2e2bcd8739ae039 = $e5520888ca8f2834$var$Button;
 
 function $72f93aebbb5a746c$var$Icon(props) {
     const { icon: icon  } = props.store.data;
-    return /*#__PURE__*/ (0, $hCgyA$jsx)($72f93aebbb5a746c$var$StyledIcon, {
+    return /*#__PURE__*/ (0, $iJRBc$jsx)($72f93aebbb5a746c$var$StyledIcon, {
         className: `pfa pfa-${icon}`
     });
 }
@@ -1391,7 +1888,7 @@ $72f93aebbb5a746c$var$Icon.defaultProps = {
     name: "icon"
 };
 var $72f93aebbb5a746c$export$2e2bcd8739ae039 = $72f93aebbb5a746c$var$Icon;
-const $72f93aebbb5a746c$var$StyledIcon = (0, $hCgyA$styledcomponents).i`
+const $72f93aebbb5a746c$var$StyledIcon = (0, $iJRBc$styledcomponents).i`
   vertical-align: middle;
   + span {
     vertical-align: middle;
@@ -1429,7 +1926,7 @@ function $b8ffdfedfdd2dd93$export$dd702b3c8240390c(target = {}, source = {}) {
 
 
 
-var $0fef43c9338d6e80$require$Buffer = $hCgyA$Buffer;
+var $0fef43c9338d6e80$require$Buffer = $iJRBc$Buffer;
 function $0fef43c9338d6e80$var$hexToBase64(hex) {
     let out = "";
     const arr = hex.split("");
@@ -1467,8 +1964,8 @@ const $10661f6b75f6ef5a$export$28e566af566f070a = ({ storeDomain: storeDomain , 
 
 const $ad2e946cb38437eb$var$storefrontApiVersion = "2022-07";
 const $ad2e946cb38437eb$export$9088a05f2d701846 = ({ storeDomain: storeDomain , storefrontToken: storefrontToken  })=>{
-    const [data, setData] = (0, $hCgyA$useState)({});
-    (0, $hCgyA$useEffect)(()=>{
+    const [data, setData] = (0, $iJRBc$useState)({});
+    (0, $iJRBc$useEffect)(()=>{
         (async ()=>{
             const data = await (0, $10661f6b75f6ef5a$export$28e566af566f070a)({
                 storeDomain: storeDomain,
@@ -1502,7 +1999,7 @@ const $ad2e946cb38437eb$var$QUERY_LIST_PRODUCT = `
 
 
 const $a839152ba794fdc8$export$1f9e77831c0c5b8b = async (spaceId, accessToken, contentTypeId, environmentId)=>{
-    const client = (0, $hCgyA$createClient)({
+    const client = (0, $iJRBc$createClient)({
         space: spaceId,
         environment: environmentId ? environmentId : "master",
         accessToken: accessToken
@@ -1525,8 +2022,8 @@ const $a839152ba794fdc8$export$1f9e77831c0c5b8b = async (spaceId, accessToken, c
 
 
 const $ff606bfdd08aed1d$export$58bcd33f230b1e04 = ({ spaceId: spaceId , accessToken: accessToken , contentTypeId: contentTypeId , environmentId: environmentId  })=>{
-    const [data, setData] = (0, $hCgyA$useState)([]);
-    (0, $hCgyA$useEffect)(()=>{
+    const [data, setData] = (0, $iJRBc$useState)([]);
+    (0, $iJRBc$useEffect)(()=>{
         (async ()=>{
             const data = await (0, $a839152ba794fdc8$export$1f9e77831c0c5b8b)(spaceId, accessToken, contentTypeId, environmentId);
             setData(data);
@@ -1768,12 +2265,48 @@ const $a301d8183908e175$export$7c9b6dae7965b940 = `.__pf img, .__pf video {
 `;
 
 
-const $f9cf4e01c35a4093$export$9a1b410c76d0e146 = /*#__PURE__*/ (0, $hCgyA$react).createContext({});
-const $f9cf4e01c35a4093$export$b246532a35d482de = /*#__PURE__*/ (0, $hCgyA$react).createContext({});
+function $38df8bd0b99a556a$var$getDeviceCss(device, deviceCss) {
+    switch(device){
+        case "mobile":
+            return `${deviceCss}`;
+        case "tablet":
+            return `@media (min-width: 768px) {${deviceCss}}`;
+        case "laptop":
+            return `@media (min-width: 1025px) {${deviceCss}}`;
+        case "all":
+            return `@media (min-width: 1200px) {${deviceCss}}`;
+    }
+}
+function $38df8bd0b99a556a$export$681e449128971c74(elementStore, pageData) {
+    pageData.styles.forEach((data)=>{
+        const styleId = elementStore.get(data._id).styleId;
+        data.styles = data.styles.replaceAll("&", `.pf-${styleId}_`);
+    });
+    let bigString = "";
+    [
+        "mobile",
+        "tablet",
+        "laptop",
+        "all"
+    ].forEach((device)=>{
+        let smallString = "";
+        pageData.styles.forEach((data)=>{
+            const parsedData = JSON.parse(data.styles);
+            if (parsedData[device]) Object.entries(parsedData[device]).forEach(([key, value])=>smallString = `${smallString}${key}{${value}}`);
+        });
+        let deviceCss = $38df8bd0b99a556a$var$getDeviceCss(device, smallString);
+        bigString += deviceCss;
+    });
+    return bigString;
+}
+
+
+const $f9cf4e01c35a4093$export$9a1b410c76d0e146 = /*#__PURE__*/ (0, $iJRBc$react).createContext({});
+const $f9cf4e01c35a4093$export$b246532a35d482de = /*#__PURE__*/ (0, $iJRBc$react).createContext({});
 const $f9cf4e01c35a4093$export$cd762ccf1a583d69 = (children, elementStores)=>{
     if (Array.isArray(children)) return children.map((childId, idx)=>{
         const elementStore = elementStores.get(childId);
-        if (elementStore) return /*#__PURE__*/ (0, $hCgyA$jsx)($f9cf4e01c35a4093$export$1de8c376a354d952, {
+        if (elementStore) return /*#__PURE__*/ (0, $iJRBc$jsx)($f9cf4e01c35a4093$export$1de8c376a354d952, {
             store: elementStore
         }, `${childId}-${idx}`);
         return null;
@@ -1788,25 +2321,34 @@ const $f9cf4e01c35a4093$export$224298a172524123 = (pageData)=>{
             const { _id: _id  } = item;
             elementStores.set(_id, {
                 _id: _id,
+                styleId: idx + 1,
                 ...item,
                 count: idx + 1
             });
         });
-        return /*#__PURE__*/ (0, $hCgyA$jsxs)((0, $hCgyA$Fragment), {
+        console.log(elementStores);
+        const cssString = (0, $38df8bd0b99a556a$export$681e449128971c74)(elementStores, pageData);
+        console.log(cssString);
+        return /*#__PURE__*/ (0, $iJRBc$jsxs)((0, $iJRBc$Fragment), {
             children: [
-                /*#__PURE__*/ (0, $hCgyA$jsx)("style", {
+                /*#__PURE__*/ (0, $iJRBc$jsx)("style", {
                     dangerouslySetInnerHTML: {
                         __html: (0, $a301d8183908e175$export$7c9b6dae7965b940)
                     }
                 }),
-                /*#__PURE__*/ (0, $hCgyA$jsx)($f9cf4e01c35a4093$export$9a1b410c76d0e146.Provider, {
+                /*#__PURE__*/ (0, $iJRBc$jsx)("style", {
+                    dangerouslySetInnerHTML: {
+                        __html: cssString
+                    }
+                }),
+                /*#__PURE__*/ (0, $iJRBc$jsx)($f9cf4e01c35a4093$export$9a1b410c76d0e146.Provider, {
                     value: {
                         elementStores: elementStores,
                         pageData: pageData
                     },
-                    children: /*#__PURE__*/ (0, $hCgyA$jsx)("div", {
+                    children: /*#__PURE__*/ (0, $iJRBc$jsx)("div", {
                         className: `__pf __pf_${(0, $0fef43c9338d6e80$export$92dcd718a7c275a8)(bodyStore._id)}`,
-                        children: /*#__PURE__*/ (0, $hCgyA$jsx)($f9cf4e01c35a4093$export$1de8c376a354d952, {
+                        children: /*#__PURE__*/ (0, $iJRBc$jsx)($f9cf4e01c35a4093$export$1de8c376a354d952, {
                             store: bodyStore
                         })
                     })
@@ -1814,14 +2356,14 @@ const $f9cf4e01c35a4093$export$224298a172524123 = (pageData)=>{
             ]
         });
     }
-    return /*#__PURE__*/ (0, $hCgyA$jsx)("div", {
+    return /*#__PURE__*/ (0, $iJRBc$jsx)("div", {
         children: "This page has no root"
     });
 };
 const $f9cf4e01c35a4093$export$1de8c376a354d952 = ({ store: store  })=>{
     const { type: type , children: children  } = store;
-    const { elementStores: elementStores , pageData: pageData  } = (0, $hCgyA$useContext)($f9cf4e01c35a4093$export$9a1b410c76d0e146);
-    const EnhancedElement = /*#__PURE__*/ (0, $hCgyA$memo)(type === "Column" ? (0, $6a05cbc83fd546ef$export$2e2bcd8739ae039)[type] : (0, $a07ab03f670637d5$export$643600c573d23dce)((0, $6a05cbc83fd546ef$export$2e2bcd8739ae039)[type]));
+    const { elementStores: elementStores , pageData: pageData  } = (0, $iJRBc$useContext)($f9cf4e01c35a4093$export$9a1b410c76d0e146);
+    const EnhancedElement = /*#__PURE__*/ (0, $iJRBc$memo)(type === "Column" ? (0, $6a05cbc83fd546ef$export$2e2bcd8739ae039)[type] : (0, $a07ab03f670637d5$export$643600c573d23dce)((0, $6a05cbc83fd546ef$export$2e2bcd8739ae039)[type]));
     const defaultProps = (0, $6a05cbc83fd546ef$export$2e2bcd8739ae039)[type]?.defaultProps || {};
     store.data = (0, $b8ffdfedfdd2dd93$export$dd702b3c8240390c)(defaultProps, store.data);
     if (store.hasOwnProperty("dataSourceId")) {
@@ -1853,15 +2395,15 @@ const $f9cf4e01c35a4093$export$1de8c376a354d952 = ({ store: store  })=>{
                 break;
         }
         // return <div>sththsth</div>
-        return dataset?.map((data, ind)=>/*#__PURE__*/ (0, $hCgyA$jsx)($f9cf4e01c35a4093$export$b246532a35d482de.Provider, {
+        return dataset?.map((data, ind)=>/*#__PURE__*/ (0, $iJRBc$jsx)($f9cf4e01c35a4093$export$b246532a35d482de.Provider, {
                 value: data,
-                children: /*#__PURE__*/ (0, $hCgyA$jsx)(EnhancedElement, {
+                children: /*#__PURE__*/ (0, $iJRBc$jsx)(EnhancedElement, {
                     store: store,
                     children: $f9cf4e01c35a4093$export$cd762ccf1a583d69(children, elementStores)
                 }, ind)
             }));
     }
-    const dataContext = (0, $hCgyA$useContext)($f9cf4e01c35a4093$export$b246532a35d482de);
+    const dataContext = (0, $iJRBc$useContext)($f9cf4e01c35a4093$export$b246532a35d482de);
     if (store.hasOwnProperty("dataBinding")) {
         const bindStore = store.dataBinding;
         Object.keys(bindStore).forEach((key)=>{
@@ -1869,14 +2411,19 @@ const $f9cf4e01c35a4093$export$1de8c376a354d952 = ({ store: store  })=>{
             if (exist) store.data[key] = value;
         });
     }
-    return /*#__PURE__*/ (0, $hCgyA$jsx)(EnhancedElement, {
+    return /*#__PURE__*/ (0, $iJRBc$jsx)(EnhancedElement, {
         store: store,
         children: $f9cf4e01c35a4093$export$cd762ccf1a583d69(children, elementStores)
     });
 };
 
 
-const $c3f6c693698dc7cd$export$c4a41ed60262b6c6 = (type)=>{
+const $b61286adc54f4dff$export$9d75b63c77f2332a = async (siteId, pageHandler)=>{
+    const data = await fetch(`http://localhost:3000/api/public/page/handle?handle=${pageHandler}&shopDomain=${siteId}`);
+    const pageData = await data.json();
+    return pageData;
+};
+const $b61286adc54f4dff$export$c4a41ed60262b6c6 = (type)=>{
     switch(type){
         case "static":
             return 0, $83ff32df0b45137b$export$24c10788497c064;
@@ -1886,10 +2433,10 @@ const $c3f6c693698dc7cd$export$c4a41ed60262b6c6 = (type)=>{
             return 0, $fc565b81ba575eda$export$276c71f37e27127d;
     }
 };
-function $c3f6c693698dc7cd$export$2e2bcd8739ae039({ accessToken: accessToken , pageId: pageId , pageHandler: pageHandler  }) {
-    return (0, $f9cf4e01c35a4093$export$224298a172524123)($c3f6c693698dc7cd$export$c4a41ed60262b6c6(pageHandler));
+function $b61286adc54f4dff$export$2e2bcd8739ae039({ accessToken: accessToken , pageData: pageData  }) {
+    return (0, $f9cf4e01c35a4093$export$224298a172524123)(pageData);
 }
 
 
-export {$c3f6c693698dc7cd$export$c4a41ed60262b6c6 as renderData, $c3f6c693698dc7cd$export$2e2bcd8739ae039 as default};
+export {$b61286adc54f4dff$export$9d75b63c77f2332a as pageFlyLoader, $b61286adc54f4dff$export$c4a41ed60262b6c6 as renderData, $b61286adc54f4dff$export$2e2bcd8739ae039 as default};
 //# sourceMappingURL=module.js.map

@@ -1,3 +1,5 @@
+import { FAKE_DATA_STOREFRONT } from "./FAKE_DATA_STOREFRONT";
+
 export const FAKE_DATA = {
     "_id": "91feb786-f3cb-466d-89cb-8900f9e34186",
     "__v": 0,
