@@ -1,3 +1,19 @@
+declare namespace Section {
+    var defaultProps: {
+        container: boolean;
+        containerWidth: number;
+        parallax: boolean;
+        parallaxBg: string;
+        parallaxSpeed: number;
+        parallaxRev: boolean;
+        src: string;
+        videoBg: string;
+        bgType: string;
+        sectionName: string;
+        filterColor: string;
+        name: string;
+    };
+}
 declare namespace Image {
     var defaultProps: {
         name: string;
@@ -22,11 +38,6 @@ declare namespace Paragraph {
     var defaultProps: {
         dropcap: boolean;
     };
-}
-declare global {
-    interface Window {
-        pf_accordion_offset: any;
-    }
 }
 declare namespace Button {
     var defaultProps: {

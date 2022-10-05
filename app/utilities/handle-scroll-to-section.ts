@@ -1,12 +1,6 @@
 import {getDevice} from './get-device'
 import {smoothScroll} from './smooth-scroll'
 
-declare global {
-  interface Window {
-      pf_accordion_offset: any;
-  }
-}
-
 export async function handleScrollToSection(e) {
   e.preventDefault();
   e.stopPropagation();

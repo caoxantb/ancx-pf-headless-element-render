@@ -1025,37 +1025,366 @@ var $dd92925a5cab8317$export$2e2bcd8739ae039 = $dd92925a5cab8317$var$Text;
 
 
 
+function $f2e861946976e500$export$93b33d367be6802b(src, target = document.body, async = true, defer = false) {
+    return new Promise((resolve, reject)=>{
+        const doc = target.ownerDocument;
+        if (doc.querySelector(`script[src="${src}"]`)) return resolve(true);
+        const script = doc.createElement("script");
+        script.src = src;
+        script.async = async;
+        script.defer = defer;
+        script.onload = resolve;
+        script.onerror = reject;
+        target.appendChild(script);
+    });
+}
 
-const $85a0f0de2c526bbc$var$Section = (props)=>{
-    const { children: children , store: store , store: { _id: _id  }  } = props;
+
+async function $ab9e14420363169c$export$d11e21666c6a970d(section) {
+    await (0, $f2e861946976e500$export$93b33d367be6802b)("https://unpkg.com/jarallax@1/dist/jarallax.min.js").catch(console.error);
+    console.log("run here 1");
+    setTimeout(()=>{
+        const speed = section.getAttribute("data-parallax-speed") || 4;
+        const img = section.querySelector(".pf-parallax-img");
+        if ("jarallax" in window) {
+            console.log("run here 2");
+            window.jarallax(section, {
+                speed: Number(speed) / 10,
+                imgElement: ".pf-parallax-img",
+                onInit: function() {
+                    img.style.opacity = 1;
+                }
+            });
+        }
+    }, 100);
+}
+
+
+
+
+
+
+const $b909b59e1d4bef58$export$a7cd553a5e0245f2 = (src)=>{
+    if (src) src.match(/(http:|https:|)\/\/(player.|www.)?(vimeo\.com|youtu(be\.com|\.be|be\.googleapis\.com))\/(video\/|embed\/|watch\?v=|v\/)?([A-Za-z0-9._%-]*)(&\S+)?/);
+    return RegExp.$6;
+};
+const $b909b59e1d4bef58$export$7d218b4bcd9d150d = (props, notData = false)=>{
+    const { clickAction: clickAction , href: href , linkTarget: linkTarget , section: section , topOffset: topOffset , phone: phone , mailTo: mailTo , src: src , popupContent: popupContent , popupWidth: popupWidth , popupHeight: popupHeight , popupAnimation: popupAnimation , youtubeData: youtubeData , shopifyPageData: shopifyPageData , vimeoData: vimeoData , htmlVideoData: htmlVideoData , popupImageData: popupImageData ,  } = props.store.data;
+    let data = null;
+    switch(clickAction){
+        case "url":
+            data = href ? notData ? {
+                href: href,
+                target: linkTarget
+            } : {
+                "data-href": href,
+                "data-target": linkTarget
+            } : {};
+            break;
+        case "section":
+            data = section ? {
+                "data-to-section": section,
+                "data-offset": topOffset ? JSON.stringify(topOffset).replaceAll('"', "&quot;") : JSON.stringify({
+                    all: 50,
+                    laptop: 50,
+                    tablet: 50,
+                    mobile: 50
+                }).replaceAll('"', "&quot;"),
+                href: "#"
+            } : {};
+            break;
+        case "email":
+            data = mailTo ? notData ? {
+                href: mailTo
+            } : {
+                "data-href": mailTo
+            } : {};
+            break;
+        case "phone":
+            data = phone ? notData ? {
+                href: `tel:${phone}`
+            } : {
+                "data-href": `tel:${phone}`
+            } : {};
+            break;
+        case "lightbox":
+            data = notData ? {
+                href: src
+            } : {
+                "data-href": src
+            };
+            break;
+        case "popup":
+            data = {};
+            if (popupContent === "youtube") {
+                const { autoplay: autoplay , loop: loop , mute: mute , videoID: defaultVideoID , controls: controls , src: src1 , startTime: startTime , endTime: endTime ,  } = youtubeData;
+                const videoID = src1 && $b909b59e1d4bef58$export$a7cd553a5e0245f2(src1) ? $b909b59e1d4bef58$export$a7cd553a5e0245f2(src1) : defaultVideoID;
+                const start = startTime > 0 ? `?start=${startTime}` : "";
+                const end = endTime > 0 && startTime > 0 && startTime < endTime ? `&end=${endTime}` : "";
+                let params = `${start}${end}` + `${start ? "&" : "?"}` + `&autoplay=${autoplay ? 1 : 0}` + `&loop=${loop ? `1&playlist=${videoID}` : "0"}` + `&mute=${mute ? 1 : 0}` + `&controls=${controls ? 1 : 0}` + `&enablejsapi=1`;
+                const videoSrc = `https://www.youtube.com/embed/${videoID}${params}`;
+                data = {
+                    "data-popup-content": "youtube",
+                    "data-src": videoSrc
+                };
+            } else if (popupContent === "vimeo") {
+                const { autoplay: autoplay1 , loop: loop1 , mute: mute1 , portrait: portrait , byline: byline , title: title , controls: controls1 , src: src2  } = vimeoData;
+                const params1 = `&autoplay=${autoplay1}` + `&loop=${loop1}` + `&mute=${mute1}` + `&controls=${controls1}` + `&portrait=${portrait}` + `&byline=${byline}` + `&title=${title}`;
+                const videoId = src2 && $b909b59e1d4bef58$export$a7cd553a5e0245f2(src2);
+                const videoID1 = videoId || "334691762";
+                const autoplaySetting = {};
+                autoplaySetting.allow = "autoplay";
+                const videoSrc1 = `https://player.vimeo.com/video/${videoID1}?api=1${params1}`;
+                data = {
+                    "data-popup-content": "vimeo",
+                    "data-src": videoSrc1
+                };
+            } else if (popupContent === "video") {
+                const { autoplay: autoplay2 , loop: loop2 , mute: mute2 , controls: controls2 , src: src3  } = htmlVideoData;
+                data = {
+                    "data-popup-content": "video",
+                    "data-src": src3 || "https://cdn.pagefly.io/static/video/placeholder.mp4",
+                    "data-autoplay": autoplay2,
+                    "data-loop": loop2,
+                    "data-controls": controls2,
+                    "data-muted": mute2
+                };
+            } else if (popupContent === "shopify") {
+                const { url: url  } = shopifyPageData;
+                const src4 = url || "";
+                data = {
+                    "data-popup-content": "shopify",
+                    "data-src": src4
+                };
+            } else if (popupContent === "image") {
+                const { src: src5 , title: title1 , alt: alt , objectFit: objectFit , objectPosition: objectPosition  } = popupImageData;
+                data = {
+                    "data-popup-content": "image",
+                    "data-src": src5,
+                    "data-image-popup-obj-fit": objectFit,
+                    "data-image-popup-obj-position": objectPosition
+                };
+                if (title1) data["data-image-popup-title"] = title1;
+                if (alt) data["data-image-popup-alt"] = alt;
+            }
+            data["data-action"] = "modal";
+            data["data-width"] = popupWidth;
+            data["data-height"] = popupHeight;
+            data["href"] = "#";
+            if (popupAnimation) data["data-popup-animation"] = popupAnimation;
+            break;
+        default:
+            data = {};
+    }
+    return {
+        ...data
+    };
+};
+
+
+const $d8650ac3accb629f$var$VimeoDOM = (props)=>{
+    const { autoPlay: autoPlay , videoBg: videoBg , videoRef: videoRef  } = props;
+    return /*#__PURE__*/ (0, $7tzmc$reactjsxruntime.jsx)("iframe", {
+        title: "video_vimeo",
+        src: `https://player.vimeo.com/video/${(0, $b909b59e1d4bef58$export$a7cd553a5e0245f2)(videoBg)}?api=1&loop=1&muted=1&controls=0&portrait=0&byline=0&title=0&background=1&autoplay=${autoPlay}`,
+        frameBorder: "0",
+        allowFullScreen: true,
+        allow: "autoplay",
+        "data-muted": "true",
+        loading: "lazy"
+    });
+};
+const $d8650ac3accb629f$var$Mp4DOM = (props)=>{
+    const { videoRef: videoRef , videoBg: videoBg  } = props;
+    const defaultVideoBg = "https://www.youtube.com/watch?v=tsjd7xdgfjA";
+    return /*#__PURE__*/ (0, $7tzmc$reactjsxruntime.jsx)("video", {
+        ref: videoRef,
+        src: videoBg || defaultVideoBg,
+        autoPlay: true,
+        loop: true,
+        playsInline: true,
+        muted: true
+    });
+};
+const $d8650ac3accb629f$var$YoutubeDOM = (props)=>{
+    const { autoPlay: autoPlay , videoBg: videoBg , mode: mode  } = props;
+    return /*#__PURE__*/ (0, $7tzmc$reactjsxruntime.jsx)("iframe", {
+        title: "video_youtube",
+        // use this opacity for hide youtube video on mobile before it loaded
+        style: {
+            opacity: 0
+        },
+        src: `https://www.youtube.com/embed/${(0, $b909b59e1d4bef58$export$a7cd553a5e0245f2)(videoBg)}?enablejsapi=1&mute=1&loop=1&playlist=${(0, $b909b59e1d4bef58$export$a7cd553a5e0245f2)(videoBg)}&controls=0&rel=0&showinfo=0&autoplay=${autoPlay}`
+    });
+};
+const $d8650ac3accb629f$var$VideoBgByType = {
+    mp4: $d8650ac3accb629f$var$Mp4DOM,
+    youtube: $d8650ac3accb629f$var$YoutubeDOM,
+    vimeo: $d8650ac3accb629f$var$VimeoDOM
+};
+const $d8650ac3accb629f$export$6e7253654a9ef7d1 = (type, props)=>{
+    const Component = $d8650ac3accb629f$var$VideoBgByType[type];
+    return /*#__PURE__*/ (0, $7tzmc$reactjsxruntime.jsx)(Component, {
+        ...props
+    });
+};
+
+
+
+const $832a653988670cfd$export$67f67682a00d319b = (0, ($parcel$interopDefault($7tzmc$styledcomponents))).img`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.15s;
+`;
+const $832a653988670cfd$export$a7ef64d03fb7e654 = (0, ($parcel$interopDefault($7tzmc$styledcomponents))).div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  > * {
+    border: 0;
+    outline: none;
+    width: 100vw;
+    min-width: 177.77vh;
+    height: 56.25vw;
+    min-height: 100vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+`;
+const $832a653988670cfd$export$42a852a2b6b56249 = (0, ($parcel$interopDefault($7tzmc$styledcomponents))).div``;
+const $832a653988670cfd$export$5bf089bd81fe3632 = (0, ($parcel$interopDefault($7tzmc$styledcomponents))).div`
+  & {
+    padding: 20px 0;
+    position: relative;
+  }
+`;
+const $832a653988670cfd$export$47f426cc93e497b4 = (0, ($parcel$interopDefault($7tzmc$styledcomponents))).div`
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--overlay);
+  pointer-events: none;
+  position: absolute;
+  overflow: hidden;
+`;
+
+
+function $e6222dbe17814a66$export$2e2bcd8739ae039(props) {
+    let videoRef = /*#__PURE__*/ (0, ($parcel$interopDefault($7tzmc$react))).createRef();
+    const { videoBg: videoBg , bgType: bgType , parallaxBg: parallaxBg  } = props;
+    let videoType, video;
+    const autoPlay = 1;
+    if (videoBg && bgType === "video") {
+        switch(true){
+            case videoBg.toLowerCase().includes(".mp4"):
+                videoType = "mp4";
+                break;
+            case videoBg.includes("vimeo"):
+                videoType = "vimeo";
+                break;
+            case videoBg.includes("youtube"):
+                videoType = "youtube";
+                break;
+            default:
+                videoType = undefined;
+        }
+        video = videoType && (0, $d8650ac3accb629f$export$6e7253654a9ef7d1)(videoType, {
+            videoRef: videoRef,
+            autoPlay: autoPlay,
+            videoBg: videoBg
+        });
+    }
+    return /*#__PURE__*/ (0, $7tzmc$reactjsxruntime.jsxs)((0, $7tzmc$reactjsxruntime.Fragment), {
+        children: [
+            bgType === "parallax" && parallaxBg && /*#__PURE__*/ (0, $7tzmc$reactjsxruntime.jsx)((0, $832a653988670cfd$export$67f67682a00d319b), {
+                src: parallaxBg,
+                className: "pf-parallax-img",
+                alt: "parallax",
+                loading: "lazy",
+                width: 1920,
+                height: 800,
+                style: {
+                    opacity: 0
+                }
+            }),
+            bgType === "video" && /*#__PURE__*/ (0, $7tzmc$reactjsxruntime.jsx)((0, $832a653988670cfd$export$a7ef64d03fb7e654), {
+                children: videoBg && videoType ? video : null
+            })
+        ]
+    });
+}
+
+
+
+$85a0f0de2c526bbc$var$Section.defaultProps = {
+    container: true,
+    containerWidth: 1170,
+    parallax: false,
+    parallaxBg: "",
+    parallaxSpeed: 4,
+    parallaxRev: false,
+    src: "",
+    videoBg: "",
+    bgType: "standard",
+    sectionName: "",
+    filterColor: "rgba(0,0,0,0)",
+    name: "Section"
+};
+const $85a0f0de2c526bbc$var$sectionRef = /*#__PURE__*/ (0, ($parcel$interopDefault($7tzmc$react))).createRef();
+function $85a0f0de2c526bbc$var$Section(props) {
+    const { children: children , store: store , store: { _id: _id  } ,  } = props;
     const data = store.data || {};
-    const { container: container , containerWidth: containerWidth , bgType: bgType , parallaxSpeed: parallaxSpeed , filterColor: filterColor ,  } = data;
+    const { container: container , containerWidth: containerWidth , bgType: bgType , parallaxSpeed: parallaxSpeed , filterColor: filterColor , videoBg: videoBg , parallaxBg: parallaxBg ,  } = data;
     const overlayStyle = filterColor && filterColor !== "rgba(0,0,0,0)" ? {
         [`--overlay`]: filterColor
     } : undefined;
     const containerStyle = container ? {
         [`--cw`]: isNaN(containerWidth) ? containerWidth : containerWidth + "px"
     } : undefined;
-    return /*#__PURE__*/ (0, $7tzmc$reactjsxruntime.jsx)($85a0f0de2c526bbc$var$StyledSection, {
+    (0, $7tzmc$react.useEffect)(()=>{
+        if ($85a0f0de2c526bbc$var$sectionRef?.current?.getAttribute("data-parallax")) {
+            const asyncInitParallax = async ()=>{
+                await (0, $ab9e14420363169c$export$d11e21666c6a970d)($85a0f0de2c526bbc$var$sectionRef.current);
+            };
+            asyncInitParallax();
+        }
+    }, [
+        $85a0f0de2c526bbc$var$sectionRef.current
+    ]);
+    console.log($85a0f0de2c526bbc$var$sectionRef.current);
+    return /*#__PURE__*/ (0, $7tzmc$reactjsxruntime.jsxs)((0, $832a653988670cfd$export$5bf089bd81fe3632), {
+        ref: $85a0f0de2c526bbc$var$sectionRef,
         "data-parallax": bgType === "parallax" || undefined,
         "data-parallax-speed": bgType === "parallax" && parallaxSpeed ? parallaxSpeed : undefined,
         style: {
             ...overlayStyle
         },
         "data-section-id": `pf-${_id.split("-")[1]}`,
-        children: /*#__PURE__*/ (0, $7tzmc$reactjsxruntime.jsx)($85a0f0de2c526bbc$export$42a852a2b6b56249, {
-            style: containerStyle,
-            children: children
-        })
+        children: [
+            /*#__PURE__*/ (0, $7tzmc$reactjsxruntime.jsx)((0, $e6222dbe17814a66$export$2e2bcd8739ae039), {
+                bgType: bgType,
+                videoBg: videoBg,
+                parallaxBg: parallaxBg,
+                filterColor: filterColor
+            }),
+            overlayStyle && /*#__PURE__*/ (0, $7tzmc$reactjsxruntime.jsx)((0, $832a653988670cfd$export$47f426cc93e497b4), {}),
+            /*#__PURE__*/ (0, $7tzmc$reactjsxruntime.jsx)((0, $832a653988670cfd$export$42a852a2b6b56249), {
+                style: containerStyle,
+                children: children
+            })
+        ]
     });
-};
-const $85a0f0de2c526bbc$var$StyledSection = (0, ($parcel$interopDefault($7tzmc$styledcomponents))).div`
-  & {
-    padding: 20px 0;
-    position: relative;
-  }
-`;
-const $85a0f0de2c526bbc$export$42a852a2b6b56249 = (0, ($parcel$interopDefault($7tzmc$styledcomponents))).div``;
+}
 var $85a0f0de2c526bbc$export$2e2bcd8739ae039 = $85a0f0de2c526bbc$var$Section;
 
 
@@ -1367,123 +1696,6 @@ const $f0a2e4a98b3dce9c$export$2d5d2ba3c7c8c40b = (0, ($parcel$interopDefault($7
   }
 `;
 
-
-const $b909b59e1d4bef58$export$a7cd553a5e0245f2 = (src)=>{
-    if (src) src.match(/(http:|https:|)\/\/(player.|www.)?(vimeo\.com|youtu(be\.com|\.be|be\.googleapis\.com))\/(video\/|embed\/|watch\?v=|v\/)?([A-Za-z0-9._%-]*)(&\S+)?/);
-    return RegExp.$6;
-};
-const $b909b59e1d4bef58$export$7d218b4bcd9d150d = (props, notData = false)=>{
-    const { clickAction: clickAction , href: href , linkTarget: linkTarget , section: section , topOffset: topOffset , phone: phone , mailTo: mailTo , src: src , popupContent: popupContent , popupWidth: popupWidth , popupHeight: popupHeight , popupAnimation: popupAnimation , youtubeData: youtubeData , shopifyPageData: shopifyPageData , vimeoData: vimeoData , htmlVideoData: htmlVideoData , popupImageData: popupImageData ,  } = props.store.data;
-    let data = null;
-    switch(clickAction){
-        case "url":
-            data = href ? notData ? {
-                href: href,
-                target: linkTarget
-            } : {
-                "data-href": href,
-                "data-target": linkTarget
-            } : {};
-            break;
-        case "section":
-            data = section ? {
-                "data-to-section": section,
-                "data-offset": topOffset ? JSON.stringify(topOffset).replaceAll('"', "&quot;") : JSON.stringify({
-                    all: 50,
-                    laptop: 50,
-                    tablet: 50,
-                    mobile: 50
-                }).replaceAll('"', "&quot;"),
-                href: "#"
-            } : {};
-            break;
-        case "email":
-            data = mailTo ? notData ? {
-                href: mailTo
-            } : {
-                "data-href": mailTo
-            } : {};
-            break;
-        case "phone":
-            data = phone ? notData ? {
-                href: `tel:${phone}`
-            } : {
-                "data-href": `tel:${phone}`
-            } : {};
-            break;
-        case "lightbox":
-            data = notData ? {
-                href: src
-            } : {
-                "data-href": src
-            };
-            break;
-        case "popup":
-            data = {};
-            if (popupContent === "youtube") {
-                const { autoplay: autoplay , loop: loop , mute: mute , videoID: defaultVideoID , controls: controls , src: src1 , startTime: startTime , endTime: endTime ,  } = youtubeData;
-                const videoID = src1 && $b909b59e1d4bef58$export$a7cd553a5e0245f2(src1) ? $b909b59e1d4bef58$export$a7cd553a5e0245f2(src1) : defaultVideoID;
-                const start = startTime > 0 ? `?start=${startTime}` : "";
-                const end = endTime > 0 && startTime > 0 && startTime < endTime ? `&end=${endTime}` : "";
-                let params = `${start}${end}` + `${start ? "&" : "?"}` + `&autoplay=${autoplay ? 1 : 0}` + `&loop=${loop ? `1&playlist=${videoID}` : "0"}` + `&mute=${mute ? 1 : 0}` + `&controls=${controls ? 1 : 0}` + `&enablejsapi=1`;
-                const videoSrc = `https://www.youtube.com/embed/${videoID}${params}`;
-                data = {
-                    "data-popup-content": "youtube",
-                    "data-src": videoSrc
-                };
-            } else if (popupContent === "vimeo") {
-                const { autoplay: autoplay1 , loop: loop1 , mute: mute1 , portrait: portrait , byline: byline , title: title , controls: controls1 , src: src2  } = vimeoData;
-                const params1 = `&autoplay=${autoplay1}` + `&loop=${loop1}` + `&mute=${mute1}` + `&controls=${controls1}` + `&portrait=${portrait}` + `&byline=${byline}` + `&title=${title}`;
-                const videoId = src2 && $b909b59e1d4bef58$export$a7cd553a5e0245f2(src2);
-                const videoID1 = videoId || "334691762";
-                const autoplaySetting = {};
-                autoplaySetting.allow = "autoplay";
-                const videoSrc1 = `https://player.vimeo.com/video/${videoID1}?api=1${params1}`;
-                data = {
-                    "data-popup-content": "vimeo",
-                    "data-src": videoSrc1
-                };
-            } else if (popupContent === "video") {
-                const { autoplay: autoplay2 , loop: loop2 , mute: mute2 , controls: controls2 , src: src3  } = htmlVideoData;
-                data = {
-                    "data-popup-content": "video",
-                    "data-src": src3 || "https://cdn.pagefly.io/static/video/placeholder.mp4",
-                    "data-autoplay": autoplay2,
-                    "data-loop": loop2,
-                    "data-controls": controls2,
-                    "data-muted": mute2
-                };
-            } else if (popupContent === "shopify") {
-                const { url: url  } = shopifyPageData;
-                const src4 = url || "";
-                data = {
-                    "data-popup-content": "shopify",
-                    "data-src": src4
-                };
-            } else if (popupContent === "image") {
-                const { src: src5 , title: title1 , alt: alt , objectFit: objectFit , objectPosition: objectPosition  } = popupImageData;
-                data = {
-                    "data-popup-content": "image",
-                    "data-src": src5,
-                    "data-image-popup-obj-fit": objectFit,
-                    "data-image-popup-obj-position": objectPosition
-                };
-                if (title1) data["data-image-popup-title"] = title1;
-                if (alt) data["data-image-popup-alt"] = alt;
-            }
-            data["data-action"] = "modal";
-            data["data-width"] = popupWidth;
-            data["data-height"] = popupHeight;
-            data["href"] = "#";
-            if (popupAnimation) data["data-popup-animation"] = popupAnimation;
-            break;
-        default:
-            data = {};
-    }
-    return {
-        ...data
-    };
-};
 
 
 const $a42f856e2aa01a6f$export$75a78673f1dfd97e = {
@@ -1833,8 +2045,8 @@ $3854905146997a6c$var$Button.defaultProps = {
 };
 const $3854905146997a6c$var$buttonRef = /*#__PURE__*/ (0, ($parcel$interopDefault($7tzmc$react))).createRef();
 function $3854905146997a6c$var$Button(props) {
-    const { children: children  } = props;
-    const { btnStyle: btnStyle , showIcon: showIcon , iconPos: iconPos , href: href , clickAction: clickAction  } = props.store.data;
+    const { children: children , store: store  } = props;
+    const { btnStyle: btnStyle , showIcon: showIcon , iconPos: iconPos , href: href , clickAction: clickAction  } = store.data;
     const content = [
         showIcon ? children[0] : null,
         children[1] || null

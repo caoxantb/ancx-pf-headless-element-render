@@ -1,4 +1,4 @@
-import React, {useContext, useEffect} from 'react'
+import React, {useEffect, RefObject} from 'react'
 
 import { StyledButton } from './styled'
 import { getDataForClickAction } from '../../utilities/click-action'
@@ -35,11 +35,11 @@ Button.defaultProps = {
   ...defaultActionProps,
 }
 
-const buttonRef: any = React.createRef()
+const buttonRef: RefObject<HTMLElement> = React.createRef()
 
 function Button(props: any) {
-  const { children } = props
-  const { btnStyle, showIcon, iconPos, href, clickAction } = props.store.data
+  const { children, store } = props
+  const { btnStyle, showIcon, iconPos, href, clickAction } = store.data
   const content = [showIcon ? children[0] : null, children[1] || null]
   iconPos === 'right' && content.reverse()
   const buttonData = {...getDataForClickAction(props, true)}
